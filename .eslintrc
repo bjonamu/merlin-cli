@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "indent": [2, "tab"],
+    "quotes": [2, "single"],
+    "linebreak-style": [2, "unix"],
+    "semi": ["error", "always"],
+    "no-unused-vars": 1
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "extends": "eslint:recommended"
+}

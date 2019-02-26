@@ -1,0 +1,13 @@
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+
+const <%= props.name %> = ({ match }) => (
+  <>
+    <Switch>
+      <Route exact path={match.path} component={() => <div><%= props.name %> here</div>} />
+      <Route path={`${match.path}/next`} component={() => <div>next</div>} />
+    </Switch>
+  </>
+)
+
+export default <%= props.name %>

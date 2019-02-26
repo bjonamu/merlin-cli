@@ -1,0 +1,23 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+const <%= props.name %> = props => (
+  <div>
+    <p><%= props.name %></p>
+  </div>
+);
+
+const mapStateToProps = state => {
+  return {};
+};
+
+const mapDispatchToProps = dispatch => {
+  return {};
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(<%= props.name %>);
+
