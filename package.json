@@ -1,8 +1,7 @@
 {
   "name": "merlin-cli",
   "version": "0.0.1",
-  "description": "merlin-cli CLI",
-  "private": true,
+  "description": "A legendary and magical CLI tool for React development",
   "bin": {
     "merlin": "bin/merlin-cli"
   },
