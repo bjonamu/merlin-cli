@@ -5,7 +5,7 @@
 ### Commands
 
 - `merlin comp <component-name>` - Will generate a function component.
-- `merlin cont <container-name> -p <folder-name>` - Will generate a container component. <folder-name> is subfolder under containers.
+- `merlin cont <container-name> -p <folder/path-name>` - Will generate a container component. `<folder/path-name>` is a subfolder that falls under containers.
 - `merlin hk <hook-name>` - Will generate a hook.
 - `merlin l <layout-name>` - Will generate a layout.
 - `merlin r <redux-name>` - Will generate a redux.

@@ -21,7 +21,7 @@ const generateHook = async (toolbox, hookName) => {
 	const folder = 'src/hooks';
 	const target = `${folder}/use-${filename}.js`;
 
-	const { gen } = await shouldGenerate(folder, toolbox);
+	const { gen } = await shouldGenerate(target, toolbox);
 
 	if (gen) {
 		await generate({
