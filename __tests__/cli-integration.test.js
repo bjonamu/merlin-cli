@@ -20,16 +20,6 @@ afterEach(() => {
 const cli = async cmd =>
   system.run('node ' + filesystem.path(wd, 'bin', 'merlin-cli') + ` ${cmd}`)
 
-test('outputs version', async () => {
-  const output = await cli('--version')
-  expect(output).toContain('0.0.1')
-})
-
-test('outputs help', async () => {
-  const output = await cli('--help')
-  expect(output).toContain('0.0.1')
-})
-
 test('generates component', async () => {
   const outputANSI = await cli('comp foo')
   const output = stripANSI(outputANSI)
