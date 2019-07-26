@@ -1,6 +1,6 @@
 {
   "name": "merlin-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A legendary and magical CLI tool for React development",
   "repository": "https://github.com/bjonamu/merlin-cli",
   "bin": {
