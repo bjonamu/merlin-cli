@@ -1,5 +1,7 @@
 # Merlin
 
+[![CircleCI](https://circleci.com/gh/bjonamu/merlin-cli.svg?style=svg)](https://circleci.com/gh/bjonamu/merlin-cli)
+
 🧙 Is a legendary and magical CLI tool for React development
 
 ### Commands
