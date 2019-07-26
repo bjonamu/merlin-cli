@@ -1,13 +1,13 @@
 import { useState } from 'react'
 
 export default data => {
-  const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
 
-  const show = () => setOpen(true);
-  const hide = () => setOpen(false);
+  const show = () => setVisible(true);
+  const hide = () => setVisible(false);
 
   return {
-    open,
+    visible,
     show,
     hide
   };

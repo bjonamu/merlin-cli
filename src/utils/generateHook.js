@@ -1,36 +1,41 @@
-const shouldGenerate = require('./shouldGenerate');
+const shouldGenerate = require('./shouldGenerate')
 
 const generateHook = async (toolbox, hookName) => {
-	const {
-		print,
-		template: { generate },
-		parameters: { first: paramName },
-		strings: { isBlank, pascalCase, kebabCase }
-	} = toolbox;
+  const {
+    print,
+    template: { generate },
+    parameters: { first: paramName },
+    strings: { isBlank, camelCase, kebabCase }
+  } = toolbox
 
-	// validation
-	if (!hookName && isBlank(paramName)) {
-		print.info(`${toolbox.runtime.brand} hook <name>\n`);
-		print.info('A name is required.');
-		return;
-	}
+  // validation
+  if (!hookName && isBlank(paramName)) {
+    print.info(`${toolbox.runtime.brand} hook <name>\n`)
+    print.info('A name is required.')
+    return
+  }
 
-	const tempName = hookName || paramName;
-	const name = pascalCase(tempName);
-	const filename = kebabCase(tempName);
-	const folder = 'src/hooks';
-	const target = `${folder}/use-${filename}.js`;
+  let tempName = hookName || paramName
 
-	const { gen } = await shouldGenerate(target, toolbox);
+  if (!tempName.startsWith('use')) {
+    tempName = `use ${hookName || paramName}`
+  }
 
-	if (gen) {
-		await generate({
-			target,
-			template: 'hook.ejs',
-			props: { name }
-		});
-		print.info(`Generated hook ${print.colors.yellow(filename)}`);
-	}
-};
+  const name = camelCase(tempName)
+  const filename = kebabCase(tempName)
+  const folder = 'src/hooks'
+  const target = `${folder}/${filename}.js`
 
-module.exports = generateHook;
+  const { gen } = await shouldGenerate(target, toolbox)
+
+  if (gen) {
+    await generate({
+      target,
+      template: 'hook.ejs',
+      props: { name }
+    })
+    print.info(`Generated hook ${print.colors.yellow(name)}`)
+  }
+}
+
+module.exports = generateHook

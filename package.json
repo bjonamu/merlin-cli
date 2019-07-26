@@ -25,7 +25,9 @@
   },
   "devDependencies": {
     "jest": "^23.6.0",
-    "prettier": "^1.12.1"
+    "prettier": "^1.12.1",
+    "strip-ansi": "^5.2.0",
+    "tempy": "^0.3.0"
   },
   "jest": {
     "testEnvironment": "node"
